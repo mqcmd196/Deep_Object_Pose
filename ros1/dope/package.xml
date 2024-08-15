@@ -49,6 +49,7 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>catkin_virtualenv</depend>
   <depend>camera_info_manager_py</depend>
   <depend>cv_bridge</depend>
   <depend>geometry_msgs</depend>
@@ -61,8 +62,6 @@
   <depend>tf</depend>
   <depend>vision_msgs</depend>
   <depend>visualization_msgs</depend>
-  <depend>python3-pyrr-pip</depend>
-  <depend>python-pytorch-pip</depend>
   <depend>python3-numpy</depend>
   <depend>python3-scipy</depend>
   <depend>python3-opencv</depend>
@@ -71,7 +70,6 @@
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- Other tools can request additional information be placed here -->
-
+    <pip_requirements>requirements.txt</pip_requirements>
   </export>
 </package>

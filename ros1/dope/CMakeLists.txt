@@ -8,6 +8,7 @@ project(dope)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  catkin_virtualenv
   cv_bridge
   geometry_msgs
   message_filters
@@ -114,6 +115,11 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+catkin_generate_virtualenv(
+  INPUT_REQUIREMENTS requirements.txt
+  CHECK_VENV FALSE
+)
+
 ###########
 ## Build ##
 ###########
@@ -189,11 +195,9 @@ catkin_install_python(PROGRAMS
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES requirements.txt
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##

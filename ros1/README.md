@@ -13,7 +13,7 @@ The following steps assume you have installed ROS already.  Alternatively, you c
     ```
     $ mkdir -p ~/catkin_ws/src   # Replace `catkin_ws` with the name of your workspace
     $ cd ~/catkin_ws/
-    $ catkin_make
+    $ catkin build
     ```
 
 3. **Download the DOPE code**
@@ -23,26 +23,19 @@ The following steps assume you have installed ROS already.  Alternatively, you c
     $ ln -s ~/src/Deep_Object_Pose/ros1/dope ~/catkin_ws/src/dope
     ```
 
-4. **Install python dependencies**
-    ```
-    $ cd ~/catkin_ws/src/dope
-    $ python3 -m pip install -r ~/src/Deep_Object_Pose/requirements.txt
-    ```
-
-5. **Install ROS dependencies**
+4. **Install ROS dependencies**
     ```
     $ cd ~/catkin_ws
     $ rosdep install --from-paths src -i --rosdistro noetic
-    $ sudo apt-get install ros-noetic-rosbash ros-noetic-ros-comm
     ```
 
-6. **Build**
+5. **Build**
     ```
     $ cd ~/catkin_ws
-    $ catkin_make
+    $ catkin build
     ```
 
-7. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`.
+6. **Download [the weights](https://drive.google.com/open?id=1DfoA3m_Bm0fW8tOWXGVxi4ETlLEAgmcg)** and save them to the `weights` folder, *i.e.*, `~/catkin_ws/src/dope/weights/`.
 
 
 ## Running
